@@ -1,5 +1,5 @@
 import numbers
-
+from  flask_login import  current_user
 from sqlalchemy import Column, Integer, String, Boolean, Float, ForeignKey, Text, Enum, DateTime
 from sqlalchemy.orm import relationship, backref
 from Data import db,app
@@ -147,15 +147,6 @@ if __name__=='__main__':
         # db.session.add(n)
         # db.session.commit()
 
-        # m = TTKH(CustomerName="CustomerName", CCCD="CCCD", Address="Address",user_role=UserRole.USER,Da)
-        # db.session.add(m)
-        # db.session.commit()
-
-        # nn1 = ChiTietQuyDinhNN(priceLK=1.5, priceSL=0.5, Quydinh_id=1, room_id=1)
-        # tn1 = ChiTietQuyDinhTN(priceLK=1, priceSL=0.5, Quydinh_id=2, room_id=2)
-        # db.session.add_all([nn1,tn1])
-        # db.session.commit()
-
         # import hashlib
         # password=str(hashlib.md5('1'.encode('utf-8')).hexdigest())
         # u1 = User(name='Admin', username='admin', password=password,image='https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1',
@@ -188,16 +179,7 @@ if __name__=='__main__':
         # p2 = Menu(name='Superior')
         # p3 = Menu(name='Deluxe')
         # p4 = Menu(name='Royal')
-        # db.session.add_all([p1,p2,p3,p4def save_receipt(cart):
-        #     if cart:
-        #         r = Receipt(user=current_user)
-        #         db.session.add(r)
-        #
-        #         for c in cart.values():
-        #             d = ReceiptDetails(quantity=c['quantity'], price=c['price'],
-        #                                receipt=r, product_id=c['id'])
-        #             db.session.add(d)
-        #
-        #         db.session.commit()])
-        # db.session.commit()
+        # db.session.add_all([p1,p2,p3,p4 ])
+
+        db.session.commit()
         db.create_all()
