@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Standard"
+  },
+  {
+    "id": 2,
+    "name": "Superior"
+  },
+  {
+    "id": 3,
+    "name": "Deluxe"
+  },
+  {
+    "id": 4,
+    "name": "Royal"
+  }
+]

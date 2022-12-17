@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}Khách sạn online {% endblock %}
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">WEBSITE NHÂN VIÊN</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="trangchunhanvien">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lapphieudatphongnhanvien">Lập phiếu đặt phòng</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-left">
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="/">
+                        <img src="{{ current_user.image }}" width="40" class="rounded-circle"
+                             alt="{{ current_user.name }}"/>
+                        Chào {{ current_user.name }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="/logoutnv">Đăng xuất</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="/login-nhanvien">Đăng nhập</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1 class="text-center text-success">LẬP PHIẾU ĐẶT PHÒNG</h1>
+<div class="container p-5 my-5 bg-dark text-white">
+    <form method="post" enctype="multipart/form-data" action="/lapphieudatphongnhanvien" class="was-validated">
+        <div class="form-floating mb-3 mt-3">
+            <select class="form-select" placeholder="Chọn phòng" id="name" name="name">
+                {% for r in Room %}
+                <option required>{{ r.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="name">Chọn phòng</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+            <select class="form-select" placeholder="Chọn phòng" id="room_id" name="room_id">
+                {% for r in Room %}
+                <option required>{{r.id}}</option>
+                {% endfor %}
+            </select>
+            <label for="room_id">Xác nhận Room ID</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+            <input type="text" class="form-control" required id="quantity" placeholder="Nhập số lượng" name="quantity">
+            <label for="quantity">Nhập số người</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+            <input type="text" class="form-control" required id="price" placeholder="Nhập giá tiền" name="price">
+            <label for="price">Nhập giá tền</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+            <input type="text" class="form-control" required id="CustomerName" placeholder="Tên khách hàng"
+                   name="CustomerName">
+            <label for="CustomerName">Tên khách hàng</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+            <input type="number" maxlength="12" class="form-control" required id="CCCD" placeholder="Nhập CMND/CCCD"
+                   name="CCCD">
+            <label for="CCCD">CMND/CCCD</label>
+        </div>
+
+        <div class="form-floating mb-3 mt-3">
+            <input type="text" class="form-control" required id="Address" placeholder="Nhập địa chỉ"
+                   name="Address">
+            <label for="Address">Địa chỉ</label>
+        </div>
+
+        <div class="form-floating mb-3 mt-3">
+            <input type="date" class="form-control" name="DateDat"/>
+            <label for="DateDat">Ngày nhận phòng</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+            <input type="date" class="form-control" name="DateTra"/>
+            <label for="DateTra">Ngày trả</label>
+        </div>
+        <div>
+            <div class="form-check-inline">
+                <input type="submit" value="Lập phiếu" onclick="pay()" class="btn btn-danger"/>
+                <input type="submit" value="In phiếu" style="background-color: green"/>
+            </div>
+    </form>
+</div>
+
+</body>
+</html>

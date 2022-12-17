@@ -1,0 +1,95 @@
+{%  extends 'layout/base.html' %}
+
+{%  block content %}
+<style>
+
+     .img {
+
+   margin-left: 300px;
+    }
+    div.row{
+    text-align:center;
+    }
+
+</style>
+<div class="p-5 bg-primary text-white text-center">
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner img">
+            <div class="carousel-item active ">
+                <img src="https://th.bing.com/th/id/OIP.1Z_BZfIggvLHQ94f5SU3rwHaE8?w=235&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                     alt="Los Angeles" class="d-block w-50">
+            </div>
+            <div class="carousel-item ">
+                <img src="https://th.bing.com/th/id/OIP._mZj68XImG4VRvSnWwD7jQHaE7?w=235&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                     alt="Chicago" class="d-block w-50">
+            </div>
+            <div class="carousel-item ">
+                <img src="https://th.bing.com/th/id/OIP._mZj68XImG4VRvSnWwD7jQHaE7?w=235&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                     alt="Chicago" class="d-block w-50">
+            </div>
+
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-15">
+            <h2>Phòng nghỉ</h2>
+            <div class="fakeimg"><img
+                    src="https://firsthotel.com.vn/wp-content/uploads/2019/06/IMG_1781_1re980-770x459.jpg"></div>
+            <p>Khách sạn Đệ Nhất tọa lạc gần sân bay quốc tế và quốc nội Tân Sơn Nhất của thành phố Hồ Chí Minh và khu
+                vực phía Nam, là cánh cửa đầu tiên của TP. HCM mở ra đón bạn bè quốc tế đến với các di sản thiên nhiên –
+                văn hóa nổi tiếng thế giới và các trung tâm thương mại lớn của Việt Nam, Lào và Campuchia</p>
+
+            <hr class="d-sm-none">
+        </div>
+        <div class="col-sm-15">
+            <h2>Ẩm thực</h2>
+
+            <div class="fakeimg"><img width="600px"
+                                      src="https://firsthotel.com.vn/wp-content/uploads/2019/06/12726_b_IMG_1758re-770x450.jpg">
+            </div>
+            <p> Ẩm thực Đệ Nhất cũng là một thế mạnh bởi sự đa dạng phong cách và tinh tế trong từng món ăn. Nhà hàng
+                Hoa Viên Đệ Nhất với khung cảnh hồ bơi nên thơ mang đến những món ăn cũng như không gian đặc trưng đậm
+                chất Việt Nam. Nhà hàng Buffet Đệ Nhất là sự tổng hợp hài hòa các món ăn đến từ Việt – Á – Âu, là nơi lý
+                tưởng để thưởng thức một bữa tiệc hoành tráng thật sự cho khách lưu trú tại khách sạn nói riêng và thực
+                khách Sài Gòn nói chung.</p>
+
+            <h2 class="mt-15">Tiệc và Hội nghị</h2>
+
+            <div class="fakeimg"><img src="https://firsthotel.com.vn/wp-content/uploads/2019/06/VIP-770x450.jpg"></div>
+
+            <p>Tọa lạc cách trung tâm thành phố hay Chợ Lớn chỉ 15 phút, Trung tâm Tiệc – Hội nghị First Place được xem
+                là địa điểm thuận tiện nhất cho những buổi hội nghị ,triển lãm, yến tiệc của gia đình và công ty với 18
+                phòng hội thảo và 7 đại sảnh lớn có khả năng phục vụ tổng cộng hơn 3.500 khách. Kiến trúc các sảnh đều
+                được thiếc kế với trần cao sang trọng và hệ thống âm thanh ánh sáng hiện đại.
+
+                Đội ngũ nhân viên dày dạn kinh nghiệm của First Place với chất lượng phục vụ chuyên nghiệp, đẳng cấp,
+                sẳn sàng song hành cùng quý khách để tạo ra những buổi yến tiệc, hội nghị hoàn hảo cũng như sự thành
+                công và mục tiêu phát triển của khách hàng.</p>
+        </div>
+    </div>
+</div>
+
+
+{%  endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    {% if Room %}
+    <div class="row">
+        {% for r in Room %}
+        <div class="col-md-3 col-sm-12" style="padding:1rem;">
+            <div class="card">
+                <img class="card-img-top" src="{{ r.image }}" alt="{{ r.name }}">
+                <div class="card-body">
+                    <h4 class="card-title">{{ r.name }}</h4>
+                    <p class="card-text">{{ r.Type }}</p>
+                                        {% for t in r.tags %}
+                    <span class="badge bg-success mb-3">{{ t.name }}</span>
+                    {% endfor %}
+                    <p class="card-text">{{ r.price }} VNĐ</p>
+                    <a href="/Room/{{r.id}}" class="btn btn-primary">Xem chi tiết</a>
+                    <a href="javascript:;" onclick="addToCart({{r.id}},'{{r.name}}',{{r.price}})"
+                       class="btn btn-primary">Đặt phòng</a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="text-danger">Không còn phòng trống nào !!!</p>
+        {% endif%}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Phòng số 1",
+    "description": "Phòng 2 người, sang trọng",
+    "Type": "Deluxe",
+    "price": 1000000,
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",
+    "category_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Phòng số 1",
+    "description": "Phòng 2 người, sang trọng",
+    "Type": "Royal",
+    "price": 3000000,
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",
+    "category_id": 2
+  },
+    {
+    "id": 3,
+    "name": "Phòng số 1",
+    "description": "Phòng 2 người, sang trọng",
+    "Type": "Royal",
+    "price": 3000000,
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",
+    "category_id": 3
+  },
+    {
+    "id": 4,
+    "name": "Phòng số 1",
+    "description": "Phòng 2 người, sang trọng",
+    "Type": "Royal",
+    "price": 3000000,
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",
+    "category_id": 4
+  },
+      {
+    "id": 5,
+    "name": "Phòng số 1",
+    "description": "Phòng 2 người, sang trọng",
+    "Type": "Royal",
+    "price": 3000000,
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",
+    "category_id": 5
+  }
+]

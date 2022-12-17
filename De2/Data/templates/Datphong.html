@@ -1,0 +1,89 @@
+{% extends 'layout/base.html' %}
+
+{%  block content %}
+<h1 class="text-center text-info">Đặt phòng</h1>
+{% if 'cart' in session and session ['cart'] %}
+<div class="row">
+    <div class="col-sm-8">
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Loại phòng</th>
+                <th>Giá tiền</th>
+                <th>Số lượng người</th>
+            </tr>
+            {% for c in session['cart'].values() %}
+            <tr id="cart{{c.id}}">
+                <td>{{ c.id }}</td>
+                <td>{{ c.name }}</td>
+                <td>{{ "{:,.0f}".format(c.price) }} VNĐ</td>
+                <td>
+                    <input type="number" value="{{ c.quantity }}" onblur="updateCart({{ c.id }}, this)"
+                           class=" form-control">
+                </td>
+                <td>
+                    <input type="button" value="Xoá" onclick="deleteCart({{c.id}})" class="btn btn-danger">
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="col-sm-4" style="background-color : purple">
+        {% if err_msg %}
+        <div class="alert alert-danger">
+            {{ err_msg }}
+
+        </div>
+        {% endif %}
+        <form action="/DTTKH" method="post" enctype="multipart/form-data" class="was-validated">
+
+            <div class="form-floating mb-3 mt-3">
+                <h1>Điền thông tin </h1>
+            </div>
+
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" required id="CustomerName" placeholder="Nhập họ tên"
+                       name="CustomerName">
+                <label for="CustomerName">Họ tên</label>
+            </div>
+
+            <div class="form-floating mb-3 mt-3">
+                <input type="number" min="100000000000" max="1000000000000" class="form-control" required id="CCCD" placeholder="Nhập CMND/CCCD"
+                       name="CCCD">
+                <label for="CCCD">CMND/CCCD</label>
+            </div>
+
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" required id="Address" placeholder="Nhập địa chỉ"
+                       name="Address">
+                <label for="Address">Địa chỉ</label>
+            </div>
+
+            <div class="form-floating mb-3 mt-3">
+                <input type="date" class="form-control" name="DateDat"/>
+                <label for="DateDat">Ngày nhận phòng</label>
+            </div>
+            <div class="form-floating mb-3 mt-3">
+                <input type="date" class="form-control" name="DateTra"/>
+                <label for="DateTra">Ngày trả</label>
+            </div>
+            <div>
+                {% if current_user.is_authenticated %}
+                <input type="submit" value="Đặt phòng" onclick="pay()" class="btn btn-success">
+                {% else %}
+                <p>Vui lòng <a href="/login?next=/cart">đăng nhập</a> để thanh toán!</p>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="alert alert-info">
+    <h3>Số lượng người: <span class="cart-counter">{{ cart.total_quantity }}</span></h3>
+    <h3>Tổng tiền: <span class="cart-amount">{{ "{0:,.0f}".format(cart.total_amount) }}</span></h3>
+</div>
+
+{% else %}
+<p>Chưa đặt phòng</p>
+{% endif %}
+{% endblock %}
