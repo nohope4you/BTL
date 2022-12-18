@@ -143,43 +143,44 @@ if __name__=='__main__':
         db.create_all()
 
 
-        # n = Tag(name="Hết phòng")
-        # db.session.add(n)
-        # db.session.commit()
+        p1 = Menu(name='Standard')
+        p2 = Menu(name='Superior')
+        p3 = Menu(name='Deluxe')
+        p4 = Menu(name='Royal')
+        db.session.add_all([p1,p2,p3,p4 ])
 
-        # import hashlib
-        # password=str(hashlib.md5('1'.encode('utf-8')).hexdigest())
-        # u1 = User(name='Admin', username='admin', password=password,image='https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1',
-        #           user_role=UserRole.ADMIN)
-        # db.session.add(u1)
-        # db.session.commit()
-        #
-        #
-        # import hashlib
-        # password=str(hashlib.md5('1'.encode('utf-8')).hexdigest())
-        # nv1 = User(name='Nhanvien', username='employ', password=password,image='https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1',
-        #           user_role=UserRole.EMPLOY)
-        # db.session.add(nv1)
-        # db.session.commit()
-        #
-        #
-        #
-        #
-        #
-        # r1 = Room(name= "Phòng số 1", description= "Phòng 2 người, sang trọng",Type= "Deluxe", price= 1000000,  image= "https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",category_id= 1)
-        # r2 = Room(name= "Phòng số 2", description= "Phòng 2 người,d sang trọng",Type="Royal", price=3000000, image="https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1", category_id= 2)
-        # r3 = Room(name="Phòng số 2", description="Phòng 2 người,d sang trọng", Type="Standard", price=3000000,
-        #           image="https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",
-        #           category_id=3)
-        # db.session.add_all([r1,r2,r3])
-        # db.session.commit()
+        r1 = Room(name= "Phòng số 1", description= "Phòng 2 người, sang trọng",Type= "Deluxe", price= 1000000,
+                  image= "https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",
+                  category_id= 1)
+        r2 = Room(name= "Phòng số 2", description= "Phòng 2 người,d sang trọng",Type="Royal", price=3000000,
+                  image="https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",
+                  category_id= 2)
+        r3 = Room(name="Phòng số 3", description="Phòng 2 người,d sang trọng", Type="Standard", price=3000000,
+                  image="https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1",
+                  category_id=3)
+        db.session.add_all([r1,r2,r3])
+        db.session.commit()
 
 
-        # p1 = Menu(name='Standard')
-        # p2 = Menu(name='Superior')
-        # p3 = Menu(name='Deluxe')
-        # p4 = Menu(name='Royal')
-        # db.session.add_all([p1,p2,p3,p4 ])
+        import hashlib
+        password=str(hashlib.md5('1'.encode('utf-8')).hexdigest())
+        u1 = User(name='Admin', username='admin', password=password,image='https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1',
+                  user_role=UserRole.ADMIN)
+        db.session.add(u1)
+        db.session.commit()
+
+
+        import hashlib
+        password=str(hashlib.md5('1'.encode('utf-8')).hexdigest())
+        nv1 = User(name='Nhanvien', username='employ', password=password,image='https://cf.bstatic.com/xdata/images/hotel/max1280x900/402606316.jpg?k=00bb2836265ada9265b2c731390d0554c0a044162eda9d6c66334a028c606f13&o=&hp=1',
+                  user_role=UserRole.EMPLOY)
+        db.session.add(nv1)
+        db.session.commit()
+
+
+        n = Tag(name="Hết phòng")
+        db.session.add(n)
+        db.session.commit()
 
         db.session.commit()
         db.create_all()
